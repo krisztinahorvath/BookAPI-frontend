@@ -37,7 +37,7 @@ export const ShowAllAuthors = () => {
 			)}
 
 			{!loading && (
-				<IconButton component={Link} sx={{ mr: 3 }} to={`/authors/order-authors`}>
+				<IconButton component={Link} sx={{ mr: 3 }} to={`/authors/ordered-authors`}>
 					<Tooltip title="Sort authors alphabetically" arrow>
 						<FilterListIcon color="primary" />
 					</Tooltip>
