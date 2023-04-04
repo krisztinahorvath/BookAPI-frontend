@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import AddIcon from "@mui/icons-material/Add";
+import FilterListIcon from '@mui/icons-material/FilterList';
 
 export const SortAuthors = () => {
     const [loading, setLoading] = useState(false);
@@ -29,12 +30,21 @@ export const SortAuthors = () => {
 			{loading && <CircularProgress />}
 			{!loading && authors.length === 0 && <p>No courses found</p>}
 			{!loading && (
-				<IconButton component={Link} sx={{ mr: 3 }} to={`/courses/add`}>
-					<Tooltip title="Add a new course" arrow>
+				<IconButton component={Link} sx={{ mr: 3 }} to={`/authors/add`}>
+					<Tooltip title="Add a new author" arrow>
 						<AddIcon color="primary" />
 					</Tooltip>
 				</IconButton>
 			)}
+
+            {!loading && (
+				<IconButton component={Link} sx={{ mr: 3 }} to={`/authors/ordered/authors`}>
+					<Tooltip title="Sort authors alphabetically" arrow>
+						<FilterListIcon color="primary" />
+					</Tooltip>
+				</IconButton>
+			)}
+
 			{!loading && authors.length > 0 && (
 				<TableContainer component={Paper}>
 					<Table sx={{ minWidth: 650 }} aria-label="simple table">
