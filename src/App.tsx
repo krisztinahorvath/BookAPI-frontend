@@ -31,7 +31,7 @@ function App() {
 					<Route path="/authors/:authorId/delete" element={<DeleteAuthor />} />
 					<Route path="/authors/:authorId/edit" element={<UpdateAuthor />} />
 					<Route path="/authors/order-by-page-number" element={<AuthorWithAvgBookLength />} />	
-					<Route path="/authors/order-authors" element={< SortAuthors/>} />	
+					<Route path="/authors/ordered-authors" element={< SortAuthors/>} />	
 				</Routes>
 			</Router>
 		</React.Fragment>
