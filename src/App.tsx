@@ -15,16 +15,33 @@ import { DeleteAuthor } from "./components/authors/DeleteAuthor";
 import { UpdateAuthor } from "./components/authors/UpdateAuthor";
 import { AuthorWithAvgBookLength } from "./components/authors/AuthorsStatisticalReport";
 import { SortAuthors } from "./components/authors/SortAuthors";
+import { ShowAllBooks } from "./components/books/ShowAllBooks";
+import { BookDetails } from "./components/books/BookDetails";
+import { ShowAllGenres } from "./components/genres/ShowAllGenres";
+import { GenreDetails } from "./components/genres/GenreDetails";
+import { AddGenre } from "./components/genres/AddGenre";
+import { DeleteGenre } from "./components/genres/DeleteGenre";
+import { UpdateGenre } from "./components/genres/UpdateGenre";
+import { DeleteBook } from "./components/books/DeleteBook";
+import { AddBook } from "./components/books/AddBook";
+import { UpdateBook } from "./components/books/UpdateBook";
+import { BookWithAvgAuthorAge } from "./components/books/BooksStatisticalReport";
+import { FilterBooks } from "./components/books/FilterBooks";
+import { AddAuthorsToBook } from "./components/books/AddAuthorsToBook";
+import { ToastContainer } from "react-toastify";
 
 function App() {
 
   return (
+	
 		<React.Fragment>
+			<ToastContainer />
 			<Router>
 				<AppMenu />
 
 				<Routes>
 					<Route path="/" element={<HomePage />} />
+
 					<Route path="/authors" element={<ShowAllAuthors />} />
 					<Route path="/authors/add" element={<AddAuthor />} /> 
 					<Route path="/authors/:authorId/details" element={<AuthorDetails />} />
@@ -32,6 +49,21 @@ function App() {
 					<Route path="/authors/:authorId/edit" element={<UpdateAuthor />} />
 					<Route path="/authors/order-by-page-number" element={<AuthorWithAvgBookLength />} />	
 					<Route path="/authors/ordered-authors" element={< SortAuthors/>} />	
+
+					<Route path="/books" element={<ShowAllBooks />} />
+					<Route path="/books/add" element={<AddBook />} /> 
+					<Route path="/books/:bookId/details" element={<BookDetails />} />
+					<Route path="/books/:bookId/delete" element={<DeleteBook />} />
+					<Route path="/books/:bookId/edit" element={<UpdateBook />} /> 
+					<Route path="/books/order-by-author-age" element={<BookWithAvgAuthorAge />} />
+					<Route path="/books/filter-year" element={<FilterBooks />} />
+					<Route path="/books/add-authors" element={<AddAuthorsToBook />} />
+
+					<Route path="/genres" element={<ShowAllGenres />} />
+					<Route path="/genres/add" element={<AddGenre />} /> 
+					<Route path="/genres/:genreId/details" element={<GenreDetails />} />
+					<Route path="/genres/:genreId/delete" element={<DeleteGenre />} />
+					<Route path="/genres/:genreId/edit" element={<UpdateGenre />} />
 				</Routes>
 			</Router>
 		</React.Fragment>
