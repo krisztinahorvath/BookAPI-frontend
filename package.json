@@ -12,7 +12,7 @@
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@mui/material": "^5.12.2",
-    "@mui/lab": "^4.0.0-alpha.67",
+    "@mui/lab": "^5.0.0-alpha.128",
     "@mui/icons-material": "^5.11.11",
     "@mui/material": "^5.11.15",
     "@types/react-router-dom": "^5.3.3",
