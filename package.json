@@ -11,7 +11,7 @@
   "dependencies": {
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.5.0",
-    "@material-ui/lab": "^5.0.0-alpha.68",
+    "@material-ui/lab": "^4.0.0-alpha.60",
     "@mui/icons-material": "^5.11.2",
     "@mui/material": "^5.3.0",
     "@types/react-router-dom": "^5.3.3",
