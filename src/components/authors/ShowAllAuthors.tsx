@@ -112,8 +112,8 @@ export const ShowAllAuthors = () => {
 			</Button> )}
 
 			{!loading && authors.length > 0 && (
-			<TableContainer component={Paper}>
-			<Table>
+			<TableContainer component={Paper} >
+			<Table  >
 				<Thead>
 				<Tr>
 					<Th>#</Th>
@@ -138,10 +138,18 @@ export const ShowAllAuthors = () => {
 					</Td>
 					<Td>{author.yearOfBirth}</Td>
 					<Td>{author.address}</Td>
-					<Td>{author.email}</Td>
+					{/* <Td>{author.email}</Td>
 					<Td>{author.phoneNumber}</Td>
-					<Td>{nrBooks.at(index)}</Td>
-					<Td >
+					
+					<Td>
+						<Link to={`/users/${author.userId}/details`} title="View user profile">
+							{author.userName}
+						</Link>
+					</Td> */}
+					<Td align="right" style={{ whiteSpace: "pre-line", maxWidth: "200px", wordBreak: "break-word" }}>{author.email}</Td>
+					<Td align="right" style={{ whiteSpace: "pre-line", maxWidth: "200px", wordBreak: "break-word" }}>{author.phoneNumber}</Td>
+					<Td align="center">{nrBooks.at(index)}</Td>
+					<Td align="right" style={{ whiteSpace: "pre-line", maxWidth: "200px", wordBreak: "break-word" }}>
 						<Link to={`/users/${author.userId}/details`} title="View user profile">
 						{author.userName}
 						</Link>
