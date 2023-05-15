@@ -112,7 +112,7 @@ export const ShowAllAuthors = () => {
 			</Button> )}
 
 			{!loading && authors.length > 0 && (
-  <Table>
+  <Table component={Paper}>
     <Thead>
       <Tr>
         <Th>#</Th>
