@@ -112,59 +112,60 @@ export const ShowAllAuthors = () => {
 			</Button> )}
 
 			{!loading && authors.length > 0 && (
-  <Table>
-    <Thead>
-      <Tr>
-        <Th>#</Th>
-        <Th>Name</Th>
-        <Th>Year of Birth</Th>
-        <Th>Address</Th>
-        <Th>Email</Th>
-        <Th>Phone Number</Th>
-        <Th>No of Books</Th>
-        <Th>User Name</Th>
-        <Th>Action</Th>
-      </Tr>
-    </Thead>
-    <Tbody>
-      {authors.map((author, index) => (
-        <Tr key={(page - 1) * 10 + index + 1}>
-          <Td>{(page - 1) * 10 + index + 1}</Td>
-          <Td>
-            <Link to={`/authors/${author.id}/details`} title="View authors details">
-              {author.name}
-            </Link>
-          </Td>
-          <Td>{author.yearOfBirth}</Td>
-          <Td>{author.address}</Td>
-          <Td>{author.email}</Td>
-          <Td>{author.phoneNumber}</Td>
-          <Td>{nrBooks.at(index)}</Td>
-          <Td >
-            <Link to={`/users/${author.userId}/details`} title="View user profile">
-              {author.userName}
-            </Link>
-          </Td>
-          <Td >
-            <IconButton component={Link} sx={{ mr: 3 }} to={`/authors/${author.id}/details`}>
-              <Tooltip title="View author details" arrow>
-                <ReadMoreIcon color="primary" />
-              </Tooltip>
-            </IconButton>
+			<TableContainer component={Paper}>
+			<Table>
+				<Thead>
+				<Tr>
+					<Th>#</Th>
+					<Th>Name</Th>
+					<Th>Year of Birth</Th>
+					<Th>Address</Th>
+					<Th>Email</Th>
+					<Th>Phone Number</Th>
+					<Th>No of Books</Th>
+					<Th>User Name</Th>
+					<Th>Action</Th>
+				</Tr>
+				</Thead>
+				<Tbody>
+				{authors.map((author, index) => (
+					<Tr key={(page - 1) * 10 + index + 1}>
+					<Td>{(page - 1) * 10 + index + 1}</Td>
+					<Td>
+						<Link to={`/authors/${author.id}/details`} title="View authors details">
+						{author.name}
+						</Link>
+					</Td>
+					<Td>{author.yearOfBirth}</Td>
+					<Td>{author.address}</Td>
+					<Td>{author.email}</Td>
+					<Td>{author.phoneNumber}</Td>
+					<Td>{nrBooks.at(index)}</Td>
+					<Td >
+						<Link to={`/users/${author.userId}/details`} title="View user profile">
+						{author.userName}
+						</Link>
+					</Td>
+					<Td >
+						<IconButton component={Link} sx={{ mr: 3 }} to={`/authors/${author.id}/details`}>
+						<Tooltip title="View author details" arrow>
+							<ReadMoreIcon color="primary" />
+						</Tooltip>
+						</IconButton>
 
-            <IconButton component={Link} sx={{ mr: 3 }} to={`/authors/${author.id}/edit`}>
-              <EditIcon />
-            </IconButton>
+						<IconButton component={Link} sx={{ mr: 3 }} to={`/authors/${author.id}/edit`}>
+						<EditIcon />
+						</IconButton>
 
-            <IconButton component={Link} sx={{ mr: 3 }} to={`/authors/${author.id}/delete`}>
-              <DeleteForeverIcon sx={{ color: "red" }} />
-            </IconButton>
-          </Td>
-        </Tr>
-      ))}
-    </Tbody>
-  </Table>
-)}
+						<IconButton component={Link} sx={{ mr: 3 }} to={`/authors/${author.id}/delete`}>
+						<DeleteForeverIcon sx={{ color: "red" }} />
+						</IconButton>
+					</Td>
+					</Tr>
+				))}
+				</Tbody>
+			</Table></TableContainer>
+			)}
 			<Container style={{ backgroundColor: 'white', borderRadius: 10, width: 500}}>
 				<Stack spacing={2}>
 					<Pagination count={noOfPages} page={page} onChange={handlePageChange} size="large" variant="outlined" color="secondary" />
